@@ -1,0 +1,42 @@
+{
+  "id": "main_koma",
+  "name": "코마",
+  "summary": "성동구. 18년간 코마였던 주인공이 잃어버린 기억을 찾는 이야기.",
+  "setting": {
+    "regions": ["성동구"],
+    "theme": "기억, 정체성, 구두장이 vs 젠트리 vs 유령"
+  },
+  "branches": [
+    {
+      "id": "branch_shoemaker_gentry",
+      "name": "구두장이 클랜 vs 젠트리",
+      "options": [
+        { "desc": "구두장이 클랜: 칸호 배신 막고 구두장이 도움", "related": "encounter_009" },
+        { "desc": "젠트리: 칸호와 협력해 젠트리 편" }
+      ]
+    },
+    {
+      "id": "branch_info",
+      "name": "정보 수집",
+      "options": [
+        { "desc": "구두장이 루트: 구두장이 마을 도움 → 유령 조사" },
+        { "desc": "젠트리 루트: 젠트리 임무 → 유령 조사" }
+      ]
+    },
+    {
+      "id": "branch_final",
+      "name": "최종: 유령 선택",
+      "options": [
+        { "desc": "유령을 쏜다", "outcome": "7경비단과 협력, 청산" },
+        { "desc": "7경비단을 쏜다", "outcome": "유령과 협력, 소등하겠습니다" },
+        { "desc": "유령 해산", "outcome": "새로운 삶, 성불" }
+      ]
+    }
+  ],
+  "endings": [
+    { "id": "ending_cheongsan", "name": "청산", "desc": "유령 배신, 7경비단과 협력" },
+    { "id": "ending_sodeung", "name": "소등하겠습니다", "desc": "7경비단 배신, 유령과 협력" },
+    { "id": "ending_seongbul", "name": "성불", "desc": "유령 해산, 새로운 삶" }
+  ],
+  "related_encounters": ["encounter_009"]
+}

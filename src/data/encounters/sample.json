@@ -1,0 +1,878 @@
+{
+  "encounters": [
+    {
+      "id": "encounter_001",
+      "type": "basic",
+      "name": "강도 만남",
+      "description": "어둡고 좁은 골목에서 강도를 만났습니다. 그는 칼을 들고 당신을 위협하고 있습니다.",
+      "messages": [
+        { "type": "text", "content": "어둡고 좁은 골목 끝에서 누군가 다가온다." },
+        { "type": "text", "content": "그는 칼을 들고 당신을 가리킨다. \"돈 내놔. 살고 싶으면.\"" }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_fight",
+          "text": "싸운다",
+          "description": "강도와 싸운다",
+          "story": "당신은 싸우기로 했다. 권총으로 위협하자 그가 덤벼들었고, 격투 끝에 그를 제압했다. 주머니에서 돈을 챙겼지만 팔에 칼날에 긁혀 피가 난다.",
+          "requirements": {
+            "gadgets": ["권총", "근력"]
+          },
+          "results": {
+            "resources": { "health": -1 },
+            "gadgets": [{ "action": "acquire", "id": "돈", "amount": 1 }]
+          }
+        },
+        {
+          "id": "choice_run",
+          "text": "도망간다",
+          "description": "도망간다",
+          "story": "당신은 빈틈을 노려 골목 밖으로 뛰어났다. 발소리가 뒤따르지만 어둡고 좁은 길을 오히려 유리하게 쓰며 간신히 따돌렸다. 심장이 터질 듯 뛴다.",
+          "requirements": {
+            "gadgets": ["날렵함"]
+          },
+          "results": {
+            "resources": { "mental": -1 }
+          }
+        },
+        {
+          "id": "choice_pay",
+          "text": "돈을 준다",
+          "description": "돈을 주고 협력한다",
+          "story": "당신은 말없이 지갑을 꺼내 건넸다. 그가 뺏어 가며 사라진다. 돈은 없어졌지만 상처는 없다.",
+          "requirements": {
+            "resources": { "money": 1 }
+          },
+          "results": {
+            "resources": { "money": -1 }
+          }
+        },
+        {
+          "id": "choice_talk",
+          "text": "설득한다",
+          "description": "강도를 설득한다",
+          "story": "당신은 차분히 말을 건넸다. \"형, 나도 그냥 지나가는 사람이야. 서로 부대끼지 말자.\" 웅변과 교섭으로 그를 달래자, 그는 칼을 내려놓고 스스럼없이 사라졌다. 주변에서 좋은 소문이 퍼진다.",
+          "requirements": {
+            "gadgets": ["웅변", "교섭"]
+          },
+          "results": {
+            "resources": { "mental": -1 },
+            "gadgets": [{ "action": "acquire", "id": "좋은 평판", "amount": 1 }]
+          }
+        }
+      ]
+    },
+    {
+      "id": "encounter_002",
+      "type": "basic",
+      "name": "쓰레기 더미 발견",
+      "description": "쓰레기 더미에서 뭔가 반짝이는 것을 발견했습니다.",
+      "messages": [
+        { "type": "text", "content": "폐허 사이 쓰레기 더미가 눈에 들어온다." },
+        { "type": "text", "content": "뭔가 금속이 반짝인다. 가까이 가면 형체가 보인다." }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_search",
+          "text": "찾아본다",
+          "description": "쓰레기 더미를 뒤진다",
+          "story": "당신은 쓰레기 더미를 헤치고 반짝이를 더듬었다. 낡은 권총이 손에 잡혔다. 탄창은 비어 있었지만, 그대로라도 위협용으로 쓸 만하다.",
+          "requirements": {},
+          "results": {
+            "gadgets": [{ "action": "acquire", "id": "권총", "amount": 1 }]
+          }
+        },
+        {
+          "id": "choice_ignore",
+          "text": "무시한다",
+          "description": "무시하고 지나간다",
+          "story": "당신은 눈길도 주지 않고 지나쳤다. 쓰레기 더미에 손을 대다 다치는 일은 없을 것이다.",
+          "requirements": {},
+          "results": {}
+        }
+      ]
+    },
+    {
+      "id": "encounter_003",
+      "type": "basic",
+      "name": "길 잃은 사람",
+      "description": "길에서 헤매는 노인이 당신에게 길을 묻습니다. '저기, 혹시 지하철역이 어디인지 아세요?'",
+      "messages": [
+        { "type": "text", "content": "허름한 옷의 노인이 당신 앞을 막아선다." },
+        { "type": "text", "content": "\"저기, 혹시 지하철역이 어디인지 아세요?\" 두리번거리며 묻는다." },
+        { "type": "image", "url": "/static/img/placeholder.svg", "alt": "길 잃은 노인" }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_help_wanderer",
+          "text": "도와준다",
+          "description": "길을 알려주고 데려다 준다",
+          "story": "당신은 노인에게 알려줄 만한 길을 떠올리며 안내했다. 그가 고개를 숙여 감사한 뒤 걸어가며, 당신도 한동안 마음이 조금 풀린다.",
+          "requirements": {},
+          "results": {
+            "resources": { "mental": 1 }
+          }
+        },
+        {
+          "id": "choice_ignore_wanderer",
+          "text": "무시한다",
+          "description": "모른다고 하고 지나친다",
+          "story": "당신은 \"모릅니다\"라고 짧게 대답하고 지나쳤다. 노인의 시선이 등을 따르지만, 돌아보지 않는다.",
+          "requirements": {},
+          "results": {}
+        }
+      ]
+    },
+    {
+      "id": "encounter_004",
+      "type": "basic",
+      "name": "노상 상인",
+      "description": "노점에서 물건을 파는 상인이 있습니다. '한번 둘러보시죠. 오늘 딱 한 상자 남았어요.'",
+      "messages": [
+        { "type": "text", "content": "폐허 한켠 노점에 상인이 넌지시 손짓한다." },
+        { "type": "text", "content": "\"한번 둘러보시죠. 오늘 딱 한 상자 남았어요. 싸게 드릴게.\"" }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_buy",
+          "text": "물건을 산다",
+          "description": "식량 한 상자를 산다",
+          "story": "당신은 돈을 내고 식량 한 상자를 샀다. 상인이 흐뭇하게 웃으며 건넨다. 오늘 저녁은 해결됐다.",
+          "requirements": {
+            "resources": {
+              "money": 1
+            }
+          },
+          "results": {
+            "resources": {
+              "money": -1
+            },
+            "gadgets": [
+              {
+                "action": "acquire",
+                "id": "식량",
+                "amount": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "choice_decline_shop",
+          "text": "사지 않는다",
+          "description": "필요 없다고 하고 지나친다",
+          "story": "당신은 고개를 젓고 지나쳤다. 상인이 \"에이, 그럼 수고\" 하고 등을 돌린다.",
+          "requirements": {},
+          "results": {}
+        }
+      ]
+    },
+    {
+      "id": "encounter_005",
+      "type": "basic",
+      "name": "위험한 골목",
+      "description": "몇몇 불량배가 당신을 에워쌌습니다. '야, 좀 보자.' 빨리 결정해야 합니다.",
+      "messages": [
+        { "type": "text", "content": "좁은 골목 끝에서 불량배들이 당신을 막아선다." },
+        { "type": "text", "content": "\"야, 좀 보자. 혼자 다니면 위험한데.\" 빨리 결단해야 한다." }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_fight_thug",
+          "text": "싸운다",
+          "description": "주먹으로 맞선다",
+          "story": "당신은 근력을 믿고 덤벼들었다. 주먹다짐 끝에 그들을 쓰러뜨렸지만, 몸이 부딪히며 탈이 난다. 주머니에서 돈을 챙겼다.",
+          "requirements": {
+            "gadgets": ["근력"]
+          },
+          "results": {
+            "resources": {
+              "health": -1,
+              "money": 1
+            }
+          }
+        },
+        {
+          "id": "choice_run_thug",
+          "text": "도망친다",
+          "description": "빈틈을 노려 뛰어든다",
+          "story": "당신은 빈틈을 노려 골목 밖으로 뛰어났다. 날렵하게 따돌렸지만, 한동안 숨이 차고 불안이 남는다.",
+          "requirements": {
+            "gadgets": ["날렵함"]
+          },
+          "results": {
+            "resources": {
+              "mental": -1
+            }
+          }
+        },
+        {
+          "id": "choice_pay_thug",
+          "text": "돈을 건넨다",
+          "description": "돈을 주고 비켜달라고 한다",
+          "story": "당신은 말없이 지갑을 꺼내 건넸다. 그들이 웃으며 몫을 나눠 가며 비켜선다. 상처는 없지만 돈은 없다.",
+          "requirements": {
+            "resources": {
+              "money": 1
+            }
+          },
+          "results": {
+            "resources": {
+              "money": -1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "encounter_006",
+      "type": "basic",
+      "name": "암거래 상인",
+      "description": "그늘에서 '귀한 물건 있는데...' 하고 속삭이는 자가 있습니다. 권총을 노리고 있는 눈치입니다.",
+      "messages": [
+        { "type": "text", "content": "그늘진 골목에서 누군가 \"귀한 물건 있는데…\" 하고 속삭인다." },
+        { "type": "text", "content": "권총을 노리는 눈치다. 빨리 거래할지 말지 정해야 한다." }
+      ],
+      "conditions": {
+        "gadgets": ["권총"]
+      },
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_sell_gun",
+          "text": "권총을 판다",
+          "description": "권총을 넘기고 대가를 받는다",
+          "story": "당신은 권총을 건넸다. 그가 돈을 쥐어주며 사라진다. 손에서 총은 없어졌지만, 돈이 생겼다.",
+          "requirements": {
+            "gadgets": ["권총"]
+          },
+          "results": {
+            "resources": {
+              "money": 1
+            },
+            "gadgets": [
+              {
+                "action": "lose",
+                "id": "권총",
+                "amount": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "choice_refuse_deal",
+          "text": "거절한다",
+          "description": "관심 없다고 하고 떠난다",
+          "story": "당신은 \"관심 없어\"라고 짧게 말하고 자리를 떴다. 그가 중얼거리며 그늘 속으로 사라진다.",
+          "requirements": {},
+          "results": {}
+        }
+      ]
+    },
+    {
+      "id": "encounter_007",
+      "type": "basic",
+      "name": "폐품업자 김씨",
+      "description": "오늘도 힘겹게 잠자리를 마련하고 콘크리트 틈에서 잠을 청하려는 순간, 익숙한 목소리가 들려옵니다.",
+      "messages": [
+        { "type": "text", "content": "콘크리트 틈에서 잠자리 마련하려던 순간, 익숙한 목소리가 들린다." },
+        { "type": "text", "content": "\"폐허 서울에서의 삶은 좀 적응이 됐나?\" 폐품업자 김씨가 웃으며 선다." },
+        { "type": "text", "content": "\"마을 사람들이 무척 걱정했단다. 무슨 일 생기면 즉시 데려오라고 하셨지.\"" }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_thanks_kim",
+          "text": "감사합니다",
+          "description": "김씨에게 감사하고 식량을 받는다",
+          "story": "당신은 감사 인사와 함께 식량을 받았다. 김씨가 등에 한 번 토닥이며 사라진다. 마음이 조금 풀린다.",
+          "requirements": {},
+          "results": {
+            "resources": {
+              "mental": 1
+            },
+            "gadgets": [
+              {
+                "action": "acquire",
+                "id": "식량",
+                "amount": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "choice_ask_7gd",
+          "text": "7경비단이요?",
+          "description": "김씨에게 뒷산 군화 발자국 얘기를 듣고 마님으로 가라 한다",
+          "story": "당신이 7경비단 이야기를 꺼내자, 김씨는 뒷산 군화 발자국 얘기를 해주며 \"혜화 마님에 가보라\"고 한다. 돈까지 챙겨 쥐어준다.",
+          "requirements": {},
+          "results": {
+            "resources": {
+              "mental": 1,
+              "money": 1
+            }
+          }
+        },
+        {
+          "id": "choice_refuse_kim",
+          "text": "괜찮습니다",
+          "description": "도움 없이 지내겠다고 한다",
+          "story": "당신은 \"괜찮습니다\"라고 사양했다. 김씨가 아쉬운 표정으로 고개를 끄덕이며 떠난다.",
+          "requirements": {},
+          "results": {}
+        }
+      ]
+    },
+    {
+      "id": "encounter_008",
+      "type": "basic",
+      "name": "마님",
+      "description": "혜화역 근처 마님은 전쟁 후 가장 큰 술집이다. 7경비단 소문도 들을 수 있다.",
+      "messages": [
+        { "type": "text", "content": "혜화역 근처 '마님'. 전쟁 후 가장 큰 술집이다. 사람들이 오가며 7경비단 얘기도 오간다." },
+        { "type": "text", "content": "들어가려면 돈을 내거나, 몰래 들어가야 한다." }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_pay_madam",
+          "text": "돈을 내고 들어간다",
+          "description": "돈 1칸을 내고 입장한다",
+          "story": "당신은 돈을 내고 들어갔다. 술 한 잔과 함께 7경비단 얘기를 듣고, 한동안 마음이 풀린다.",
+          "requirements": {
+            "resources": {
+              "money": 1
+            }
+          },
+          "results": {
+            "resources": {
+              "money": -1,
+              "mental": 1
+            }
+          }
+        },
+        {
+          "id": "choice_sneak_madam",
+          "text": "몰래 들어간다",
+          "description": "은신술로 숨어서 들어간다",
+          "story": "당신은 은신술로 눈에 띄지 않게 들어갔다. 구석자리에서 7경비단 얘기를 엿듣고, 조용히 빠져나온다.",
+          "requirements": {
+            "gadgets": ["은신술"]
+          },
+          "results": {
+            "resources": {
+              "mental": 1
+            }
+          }
+        },
+        {
+          "id": "choice_leave_madam",
+          "text": "돌아간다",
+          "description": "들어가지 않고 떠난다",
+          "story": "당신은 마님 앞에서 발을 돌렸다. 오늘은 들어가지 않기로 한다.",
+          "requirements": {},
+          "results": {}
+        }
+      ]
+    },
+    {
+      "id": "encounter_009",
+      "type": "basic",
+      "name": "구두장이 사냥꾼과 쥐",
+      "description": "넓은 골목에서 화려한 구두를 신은 사냥꾼들이 분주히 움직입니다.",
+      "messages": [
+        { "type": "text", "content": "넓은 골목에서 구두에 술이 주렁주렁 달린 사냥꾼들이 분주히 움직인다." },
+        { "type": "text", "content": "\"커다란 쥐 못 봤어? 거의 다 잡았는데 이 근처에서 놓쳐버렸어.\" 한 여자가 당신에게 말한다." }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_help_rat",
+          "text": "쥐 잡는 걸 도와드릴게요",
+          "description": "날렵하게 쫓아가 쥐를 잡아준다",
+          "story": "당신은 날렵하게 쫓아가 쥐를 잡아 건넸다. 구두장이들이 고마워하며 \"어디선가 좋은 소문 들을 걸\" 하고 웃는다.",
+          "requirements": {
+            "gadgets": ["날렵함"]
+          },
+          "results": {
+            "resources": {
+              "mental": 1
+            },
+            "gadgets": [
+              {
+                "action": "acquire",
+                "id": "좋은 평판",
+                "amount": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "choice_help_rat_fail",
+          "text": "도와주려 했지만 실패",
+          "description": "도와주려 했으나 날렵함이 없어 쥐를 놓쳤다",
+          "story": "당신은 쥐를 쫓았지만 몸이 따라주지 않아 놓치고 만다. \"괜찮아, 우리가 다시 찾아볼게\" 하는 말만 들으며 자리를 뜬다.",
+          "requirements": {},
+          "results": { "resources": { "mental": -1 } }
+        },
+        {
+          "id": "choice_ignore_rat",
+          "text": "관심 없어요",
+          "description": "가던 길을 간다",
+          "story": "당신은 \"관심 없어요\"라고 하고 지나쳤다. 구두장이들이 투덜대며 쥐를 찾아 헤맨다.",
+          "requirements": {},
+          "results": {}
+        }
+      ]
+    },
+    {
+      "id": "encounter_010",
+      "type": "basic",
+      "name": "판자학교",
+      "description": "풀과 나무가 무성한 마당, 반쯤 무너진 건물. 아이들이 호기심 어린 눈으로 바라본다.",
+      "messages": [
+        { "type": "text", "content": "어떤 학교에 도착했다. 풀과 나무가 무성한 마당, 반쯤 무너진 건물." },
+        { "type": "text", "content": "아이들이 당신을 보며 호기심 어린 눈으로 바라본다. 선생으로 보이는 사람이 \"선생이 누구냐\" 묻는다." }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_school_interest",
+          "text": "관심이 있어요",
+          "description": "아이들과 이야기하며 논다",
+          "story": "당신은 유머와 이야기로 아이들과 친해졌다. 선생이 고맙다며 인사한다. 마음이 한 풀린다.",
+          "requirements": {
+            "gadgets": ["유머", "역사학", "능숙한 거짓말"]
+          },
+          "results": {
+            "resources": {
+              "mental": 1
+            }
+          }
+        },
+        {
+          "id": "choice_school_help_wood",
+          "text": "나무를 구해올게요",
+          "description": "근력으로 나무를 해와 학교 수리를 돕는다",
+          "story": "당신은 근력으로 나무를 해와 보강 재료를 만들어줬다. 선생이 감사하며 돈을 챙겨 쥐어준다.",
+          "requirements": {
+            "gadgets": ["근력"]
+          },
+          "results": {
+            "resources": {
+              "mental": 1,
+              "money": 1
+            }
+          }
+        },
+        {
+          "id": "choice_school_help_lock",
+          "text": "갇힌 사람을 구하러 갑니다",
+          "description": "자물쇠 따기로 구출을 돕는다",
+          "story": "당신은 자물쇠 따기로 갇힌 사람을 풀어줬다. 학교와 마을에서 좋은 소문이 퍼진다.",
+          "requirements": {
+            "gadgets": ["자물쇠 따기"]
+          },
+          "results": {
+            "resources": {
+              "mental": 1
+            },
+            "gadgets": [
+              {
+                "action": "acquire",
+                "id": "좋은 평판",
+                "amount": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "choice_school_leave",
+          "text": "돌아간다",
+          "description": "들어가지 않고 떠난다",
+          "story": "당신은 \"아니요\" 하고 돌아섰다. 아이들의 시선이 등을 따른다.",
+          "requirements": {},
+          "results": {}
+        }
+      ]
+    },
+    {
+      "id": "encounter_011",
+      "type": "basic",
+      "name": "거대 고양이",
+      "description": "도심 외곽 폐가. 사람 키만 한 털북숭이 짐승이 쓰레기 더미 사이로 움직이며 당신을 노린다.",
+      "messages": [
+        { "type": "text", "content": "도심 외곽 폐가. 쓰레기 더미 사이로 뭔가 커다란 것이 움직인다." },
+        { "type": "text", "content": "사람 키만 한 털북숭이 짐승이 당신을 노려본다. \"거대 고양이다, 괴물이다!\" 주변에서 외친다." }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_cat_peace",
+          "text": "날렵하게 피하며 말로 풀어본다",
+          "description": "날렵함과 웅변으로 위협을 피하고 평화적으로 해결한다",
+          "story": "당신은 날렵하게 피하며 말로 달랬다. 거대 고양이가 낮은 목소리로 골골대다 물러선다. 주민들이 감사해한다.",
+          "requirements": {
+            "gadgets": ["날렵함", "웅변"]
+          },
+          "results": {
+            "resources": {
+              "mental": 1
+            },
+            "gadgets": [
+              {
+                "action": "acquire",
+                "id": "좋은 평판",
+                "amount": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "choice_cat_fight",
+          "text": "총을 겨눈다",
+          "description": "권총으로 거대 고양이를 쏜다",
+          "story": "당신은 권총을 겨눴다. 격투 끝에 쓰러뜨렸지만 할퀴어 상처가 난다. 고기와 돈을 챙겼다.",
+          "requirements": {
+            "gadgets": ["권총"]
+          },
+          "results": {
+            "resources": {
+              "health": -1,
+              "money": 1
+            },
+            "gadgets": [
+              {
+                "action": "acquire",
+                "id": "생고기",
+                "amount": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "choice_cat_run",
+          "text": "빈틈을 노려 도망친다",
+          "description": "날렵함으로 위협을 피해 도망친다",
+          "story": "당신은 빈틈을 노려 날렵하게 도망쳤다. 부상은 없지만 한동안 심장이 쿵쾅거린다.",
+          "requirements": {
+            "gadgets": ["날렵함"]
+          },
+          "results": {
+            "resources": {
+              "mental": -1
+            }
+          }
+        },
+        {
+          "id": "choice_cat_run_slow",
+          "text": "부산하게 도망친다",
+          "description": "날렵함 없이 도망치다 부상을 입는다",
+          "story": "당신은 허둥대며 뛰었지만 등과 팔을 할퀴어 피가 난다. 간신히 빠져나왔지만 상처와 공포가 남는다.",
+          "requirements": {},
+          "results": {
+            "resources": {
+              "health": -1,
+              "mental": -1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "encounter_012",
+      "type": "basic",
+      "name": "청설모를 놓친 고엽사",
+      "description": "사냥하던 청설모를 놓친 노련한 엽사가 주변을 뒤진다.",
+      "messages": [
+        { "type": "text", "content": "\"제기랄!\" 노련한 엽사가 주변을 뒤진다." },
+        { "type": "text", "content": "\"저 놈만 잡으면 오늘 저녁이 있는데.\" 청설모를 놓친 모양이다. 관찰력이나 리트리버가 있으면 도와줄 수 있을 것 같다." }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_help_yeop",
+          "text": "도와드릴게요",
+          "description": "관찰력이나 리트리버로 청설모를 잡아준다",
+          "story": "당신은 청설모를 찾아주려고 주변을 살폈다. 관찰력(또는 리트리버)으로 흔적을 추적해 결국 잡아냈다. 고엽사가 감사하며 권총을 선물로 준다.",
+          "requirements": {
+            "gadgets": ["관찰력", "리트리버"]
+          },
+          "results": {
+            "resources": {
+              "mental": 1
+            },
+            "gadgets": [
+              {
+                "action": "acquire",
+                "id": "권총",
+                "amount": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "choice_help_yeop_fail",
+          "text": "도와주려 했지만 실패",
+          "description": "도와주려고 했지만 필요한 능력이 없어 실패했다",
+          "story": "당신은 청설모를 찾아주려고 주변을 살폈지만, 관찰력이나 사냥개가 없어 흔적을 찾지 못했다. 고엽사는 '괜찮아, 내가 다시 찾아볼게'라며 고개를 끄덕인다.",
+          "requirements": {},
+          "results": {
+            "resources": {
+              "mental": -1
+            }
+          }
+        },
+        {
+          "id": "choice_decline_yeop",
+          "text": "어렵겠습니다",
+          "description": "도움을 사양하고 지나친다",
+          "story": "당신은 '어렵겠습니다'라고 답하고 지나쳤다. 고엽사는 아쉬운 표정으로 다시 주변을 뒤지기 시작한다.",
+          "requirements": {},
+          "results": {}
+        }
+      ]
+    },
+    {
+      "id": "encounter_013",
+      "type": "basic",
+      "name": "정체 모를 실험실",
+      "description": "낡은 건물 지하. 곰팡내와 약품 냄새, 삭은 쇠사슬과 핏자국. 의약품이 눈에 띈다.",
+      "messages": [
+        { "type": "text", "content": "낡은 건물 지하. 퀴퀴한 곰팡내, 은은한 약품 냄새." },
+        { "type": "text", "content": "삭은 쇠사슬이 매달린 수술대, 오래된 갈색 핏자국. 전약상자에서 쓸만한 의약품이 보인다." }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_lab_medicine",
+          "text": "의약품을 챙긴다",
+          "description": "전약상자에서 의약품을 건진다",
+          "story": "당신은 전약상자를 뒤져 의약품을 챙겼다. 이곳 분위기는 잊고 빨리 나가기로 한다.",
+          "requirements": {},
+          "results": {
+            "gadgets": [
+              {
+                "action": "acquire",
+                "id": "의약품",
+                "amount": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "choice_lab_leave",
+          "text": "빨리 나간다",
+          "description": "불길한 기운에 서둘러 떠난다",
+          "story": "당신은 불길한 기운에 아무것도 건드리지 않고 서둘러 나왔다. 한동안 마음이 불편하다.",
+          "requirements": {},
+          "results": {
+            "resources": {
+              "mental": -1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "encounter_014",
+      "type": "basic",
+      "name": "까마귀 군주 교단",
+      "description": "교보문고 인근 교단 입구. 갇힌 사람들이 구해달라 외친다.",
+      "messages": [
+        { "type": "text", "content": "교보문고 인근. 책을 치워가며 찾은 교단 입구." },
+        { "type": "text", "content": "사람들이 쇠사슬에 묶여 있다. \"구해줘!\" 자물쇠를 따면 풀어줄 수 있을 것 같다." }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_crow_unlock",
+          "text": "자물쇠를 연다",
+          "description": "자물쇠 따기로 포로들을 풀어준다",
+          "story": "당신은 자물쇠 따기로 포로들을 풀어줬다. 그들이 울며 감사하고, 근처에서 좋은 소문이 퍼진다.",
+          "requirements": {
+            "gadgets": ["자물쇠 따기"]
+          },
+          "results": {
+            "resources": {
+              "mental": 1
+            },
+            "gadgets": [
+              {
+                "action": "acquire",
+                "id": "좋은 평판",
+                "amount": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "choice_crow_leave",
+          "text": "못 본 척 한다",
+          "description": "위험을 피해 떠난다",
+          "story": "당신은 못 본 척하고 자리를 떴다. 외침이 등 뒤로 멀어진다. 마음이 묵직하다.",
+          "requirements": {},
+          "results": {}
+        }
+      ]
+    },
+    {
+      "id": "encounter_015",
+      "type": "basic",
+      "name": "괴상한 가판대",
+      "description": "낡은 가판대 앞에 수상한 노인이 앉아 있다. 이상한 물건들이 진열되어 있다.",
+      "messages": [
+        { "type": "text", "content": "낡은 가판대. 수상한 노인이 웃으며 손짓한다." },
+        { "type": "text", "content": "\"이것도 보고, 저것도 보라. 다 쓸모 있는 것들이야.\" 개박하, 살충제, 각설탕 같은 것들이 보인다." }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_stall_buy",
+          "text": "물건을 산다",
+          "description": "돈을 내고 개박하나 살충제 등을 산다",
+          "story": "당신은 돈을 내고 가판대 물건을 샀다. 노인이 \"잘 골랐어\" 하고 웃는다.",
+          "requirements": {
+            "resources": { "money": 1 }
+          },
+          "results": {
+            "resources": { "money": -1 },
+            "gadgets": [
+              { "action": "acquire", "id": "개박하", "amount": 1 }
+            ]
+          }
+        },
+        {
+          "id": "choice_stall_leave",
+          "text": "지나친다",
+          "description": "관심 없다고 하고 지나친다",
+          "story": "당신은 고개를 젓고 지나쳤다. 노인이 \"아쉽군\" 하고 중얼거린다.",
+          "requirements": {},
+          "results": {}
+        }
+      ]
+    },
+    {
+      "id": "encounter_016",
+      "type": "basic",
+      "name": "보석문 까마귀",
+      "description": "보석문 근처. 까마귀들이 날며 짖어댄다. MP3로 까마귀 울음소리를 틀면 피할 수 있다는 소문이 있다.",
+      "messages": [
+        { "type": "text", "content": "보석문 근처. 까마귀 떼가 날며 짖어댄다. 머리 위로 그림자가 스친다." },
+        { "type": "text", "content": "MP3로 까마귀 울음소리를 틀면 무리에서 벗어날 수 있다는 얘기를 들은 적 있다." }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_crow_mp3",
+          "text": "MP3로 까마귀 소리를 튼다",
+          "description": "MP3로 까마귀 울음소리를 재생해 피한다",
+          "story": "당신은 MP3로 까마귀 울음소리를 틀었다. 떼가 헷갈려하며 흩어지고, 당신은 조용히 빠져나온다.",
+          "requirements": {
+            "gadgets": ["MP3"]
+          },
+          "results": {
+            "resources": { "mental": 1 }
+          }
+        },
+        {
+          "id": "choice_crow_run",
+          "text": "그냥 뛰어서 지나친다",
+          "description": "날렵하게 뛰어 지나친다",
+          "story": "당신은 날렵하게 뛰어 지나쳤다. 까마귀들이 쫓아오지만 결국 따돌렸다. 다만 한동안 불안이 남는다.",
+          "requirements": {
+            "gadgets": ["날렵함"]
+          },
+          "results": {
+            "resources": { "mental": -1 }
+          }
+        },
+        {
+          "id": "choice_crow_run_fail",
+          "text": "뛰었지만 느려서 실패",
+          "description": "뛰어 지나치려 했으나 날렵함이 없어 까마귀에게 당했다",
+          "story": "당신은 뛰어서 지나치려 했지만 몸이 무거워 까마귀 떼에게 쫓겼다. 쪼이고 할퀴어 상처가 났고, 공포가 밀려온다.",
+          "requirements": {},
+          "results": {
+            "resources": { "health": -1, "mental": -1 }
+          }
+        },
+        {
+          "id": "choice_crow_slow",
+          "text": "천천히 지나친다",
+          "description": "특별히 대처하지 않고 지나친다",
+          "story": "당신은 그냥 지나쳤다. 까마귀들이 쪼고 할퀴어 상처가 났고, 공포도 쌓였다.",
+          "requirements": {},
+          "results": {
+            "resources": { "health": -1, "mental": -1 }
+          }
+        }
+      ]
+    },
+    {
+      "id": "encounter_017",
+      "type": "basic",
+      "name": "갈방",
+      "description": "어두운 동네 골목 '갈방'. 술 냄새와 대화 소리가 스민다. 7경비단·정보거래 얘기가 오간다.",
+      "messages": [
+        { "type": "text", "content": "어두운 골목 끝 '갈방'. 술 냄새와 웅성거림이 난다." },
+        { "type": "text", "content": "7경비단 얘기, 정보 거래, 뒷이야기가 오가는 소리가 들린다. 들어갈까." }
+      ],
+      "conditions": {},
+      "weight": 1,
+      "choices": [
+        {
+          "id": "choice_galbang_enter",
+          "text": "들어가서 정보를 듣는다",
+          "description": "돈을 내거나 능숙한 거짓말로 들어가 정보를 얻는다",
+          "story": "당신은 갈방에 들어가 귀를 기울였다. 7경비단 쪽 얘기와 쓸모 있는 소문을 들었다. 머리가 조금 식는다.",
+          "requirements": {
+            "resources": { "money": 1 }
+          },
+          "results": {
+            "resources": { "money": -1, "mental": 1 }
+          }
+        },
+        {
+          "id": "choice_galbang_lie",
+          "text": "거짓말로 들어간다",
+          "description": "능숙한 거짓말로 입장해 정보를 얻는다",
+          "story": "당신은 능숙한 거짓말로 \"자기 사람\"인 듯 들어갔다. 정보를 듣고 조용히 빠져나온다. 돈은 안 썼다.",
+          "requirements": {
+            "gadgets": ["능숙한 거짓말"]
+          },
+          "results": {
+            "resources": { "mental": 1 }
+          }
+        },
+        {
+          "id": "choice_galbang_leave",
+          "text": "들어가지 않는다",
+          "description": "위험을 피해 지나친다",
+          "story": "당신은 갈방 앞을 그냥 지나쳤다. 오늘은 위험을 무릅쓰지 않기로 한다.",
+          "requirements": {},
+          "results": {}
+        }
+      ]
+    }
+  ]
+}

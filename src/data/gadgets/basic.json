@@ -1,0 +1,416 @@
+{
+  "gadgets": {
+    "권총": {
+      "id": "권총",
+      "type": "item",
+      "category": "weapon",
+      "name": "권총",
+      "description": "기본적인 권총입니다.",
+      "stackable": false
+    },
+    "근력": {
+      "id": "근력",
+      "type": "ability",
+      "category": "physical",
+      "name": "근력",
+      "description": "신체 능력: 근력",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "날렵함": {
+      "id": "날렵함",
+      "type": "ability",
+      "category": "physical",
+      "name": "날렵함",
+      "description": "신체 능력: 날렵함",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "웅변": {
+      "id": "웅변",
+      "type": "ability",
+      "category": "social",
+      "name": "웅변",
+      "description": "사회 능력: 웅변",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "교섭": {
+      "id": "교섭",
+      "type": "ability",
+      "category": "social",
+      "name": "교섭",
+      "description": "사회 능력: 교섭",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "돈": {
+      "id": "돈",
+      "type": "item",
+      "category": "tool",
+      "name": "돈",
+      "description": "화폐",
+      "stackable": true
+    },
+    "좋은 평판": {
+      "id": "좋은 평판",
+      "type": "state",
+      "category": "positive",
+      "name": "좋은 평판",
+      "description": "긍정적 상태: 좋은 평판",
+      "stackable": false
+    },
+    "식량": {
+      "id": "식량",
+      "type": "item",
+      "category": "consumable",
+      "name": "식량",
+      "description": "먹으면 체력을 조금 회복한다.",
+      "stackable": true
+    },
+    "은신술": {
+      "id": "은신술",
+      "type": "ability",
+      "category": "stealth",
+      "name": "은신술",
+      "description": "숨어 다니는 법을 안다.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "관찰력": {
+      "id": "관찰력",
+      "type": "ability",
+      "category": "perception",
+      "name": "관찰력",
+      "description": "주변을 꼼꼼히 살핀다.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "손재주": {
+      "id": "손재주",
+      "type": "ability",
+      "category": "craft",
+      "name": "손재주",
+      "description": "손이 무척 빠르고 정확하다.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "응급처치": {
+      "id": "응급처치",
+      "type": "ability",
+      "category": "survival",
+      "name": "응급처치",
+      "description": "상처를 어느 정도 다룰 수 있다.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "의약품": {
+      "id": "의약품",
+      "type": "item",
+      "category": "consumable",
+      "name": "의약품",
+      "description": "부상 시 쓰면 체력을 회복한다.",
+      "stackable": true
+    },
+    "방독면": {
+      "id": "방독면",
+      "type": "item",
+      "category": "tool",
+      "name": "방독면",
+      "description": "유독가스나 먼지를 막아 준다.",
+      "stackable": false
+    },
+    "생고기": {
+      "id": "생고기",
+      "type": "item",
+      "category": "consumable",
+      "name": "생고기",
+      "description": "날것이지만 굶주리면 소용있다.",
+      "stackable": true
+    },
+    "통솔력": {
+      "id": "통솔력",
+      "type": "ability",
+      "category": "social",
+      "name": "통솔력",
+      "description": "사람들을 이끌 수 있다.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "불굴의 투지": {
+      "id": "불굴의 투지",
+      "type": "ability",
+      "category": "physical",
+      "name": "불굴의 투지",
+      "description": "절대 굴하지 않는 정신력.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "철학": {
+      "id": "철학",
+      "type": "ability",
+      "category": "social",
+      "name": "철학",
+      "description": "논리적으로 말하고 설득한다.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "리트리버": {
+      "id": "리트리버",
+      "type": "item",
+      "category": "companion",
+      "name": "리트리버",
+      "description": "충성스러운 사냥개. 추적과 전투에 도움이 된다.",
+      "stackable": false
+    },
+    "자물쇠 따기": {
+      "id": "자물쇠 따기",
+      "type": "ability",
+      "category": "craft",
+      "name": "자물쇠 따기",
+      "description": "자물쇠를 열 수 있다.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "전자기펄스수류탄": {
+      "id": "전자기펄스수류탄",
+      "type": "item",
+      "category": "tool",
+      "name": "전자기펄스수류탄",
+      "description": "기계류를 무력화한다.",
+      "stackable": true
+    },
+    "화염병": {
+      "id": "화염병",
+      "type": "item",
+      "category": "weapon",
+      "name": "화염병",
+      "description": "던지면 불이 붙는다.",
+      "stackable": true
+    },
+    "역사학": {
+      "id": "역사학",
+      "type": "ability",
+      "category": "knowledge",
+      "name": "역사학",
+      "description": "옛이야기와 지식을 안다.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "유머": {
+      "id": "유머",
+      "type": "ability",
+      "category": "social",
+      "name": "유머",
+      "description": "농담으로 분위기를 풀 수 있다.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "조립식 저격소총": {
+      "id": "조립식 저격소총",
+      "type": "item",
+      "category": "weapon",
+      "name": "조립식 저격소총",
+      "description": "분해·조립 가능한 저격소총. 사격술과 함께 사용한다.",
+      "stackable": false
+    },
+    "방탄 조끼": {
+      "id": "방탄 조끼",
+      "type": "item",
+      "category": "tool",
+      "name": "방탄 조끼",
+      "description": "총격 방어에 도움이 된다. 머리 총상은 막지 못한다.",
+      "stackable": false
+    },
+    "개박하": {
+      "id": "개박하",
+      "type": "item",
+      "category": "consumable",
+      "name": "개박하",
+      "description": "동물을 달래는 데 쓸 수 있다. 거대 고양이 평화 해결에 유효.",
+      "stackable": true
+    },
+    "살충제": {
+      "id": "살충제",
+      "type": "item",
+      "category": "tool",
+      "name": "살충제",
+      "description": "곤충·거대 모기 제거에 효과적.",
+      "stackable": true
+    },
+    "기계공학": {
+      "id": "기계공학",
+      "type": "ability",
+      "category": "craft",
+      "name": "기계공학",
+      "description": "기계 수리·제작. 무기 제작, 기술자 퀘스트에 필요.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "전기 기술": {
+      "id": "전기 기술",
+      "type": "ability",
+      "category": "craft",
+      "name": "전기 기술",
+      "description": "전자 장비 수리·해킹. 전자기 펄스 수류탄 제작 등.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "컴퓨터 기술": {
+      "id": "컴퓨터 기술",
+      "type": "ability",
+      "category": "knowledge",
+      "name": "컴퓨터 기술",
+      "description": "해킹, 암호 해독. 군사기밀 해독, ATM 해킹 등.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "강력한 직감": {
+      "id": "강력한 직감",
+      "type": "ability",
+      "category": "perception",
+      "name": "강력한 직감",
+      "description": "위험 감지, 지뢰 회피. 메인 퀘스트·엽우회에 필수.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "능숙한 거짓말": {
+      "id": "능숙한 거짓말",
+      "type": "ability",
+      "category": "social",
+      "name": "능숙한 거짓말",
+      "description": "설득·블러프. 7경비단 잠입, 교황군 회피 등.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "거짓말 탐지": {
+      "id": "거짓말 탐지",
+      "type": "ability",
+      "category": "perception",
+      "name": "거짓말 탐지",
+      "description": "거짓말을 알아챈다. 킹짱돈·화경루 도박 등.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "순수한 얼굴": {
+      "id": "순수한 얼굴",
+      "type": "ability",
+      "category": "social",
+      "name": "순수한 얼굴",
+      "description": "순수해 보이는 외모. 명동성당 진입, 맥주 획득 등.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "험악한 얼굴": {
+      "id": "험악한 얼굴",
+      "type": "ability",
+      "category": "social",
+      "name": "험악한 얼굴",
+      "description": "위협적인 외모. 협박, 돈 뜯기에 유리.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "유도": {
+      "id": "유도",
+      "type": "ability",
+      "category": "physical",
+      "name": "유도",
+      "description": "유도 기술. 근접 격투, 7경비단·서대문기마대 등.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "사격술": {
+      "id": "사격술",
+      "type": "ability",
+      "category": "physical",
+      "name": "사격술",
+      "description": "총기 사용. 저격·전투 성공률 상승.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "맥북": {
+      "id": "맥북",
+      "type": "item",
+      "category": "tool",
+      "name": "맥북",
+      "description": "휴대용 컴퓨터. 해킹·암호 해독에 사용.",
+      "stackable": false
+    },
+    "각설탕": {
+      "id": "각설탕",
+      "type": "item",
+      "category": "consumable",
+      "name": "각설탕",
+      "description": "동물 유인·달래기. 흑우 길들이기 등.",
+      "stackable": true
+    },
+    "서울 생태지식": {
+      "id": "서울 생태지식",
+      "type": "ability",
+      "category": "knowledge",
+      "name": "서울 생태지식",
+      "description": "서울 지역 생태. 식물·동물 관련 인카운터에 유효.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "야생의 친구": {
+      "id": "야생의 친구",
+      "type": "ability",
+      "category": "survival",
+      "name": "야생의 친구",
+      "description": "동물과 교감. 리트리버·길고양이·찍찍이 등 길들이기.",
+      "level": 1,
+      "maxLevel": 10,
+      "stackable": false
+    },
+    "MP3": {
+      "id": "MP3",
+      "type": "item",
+      "category": "tool",
+      "name": "MP3",
+      "description": "음악 재생. 까마귀 울음소리 대처, 예삐 퀘스트.",
+      "stackable": false
+    },
+    "길고양이": {
+      "id": "길고양이",
+      "type": "item",
+      "category": "companion",
+      "name": "길고양이",
+      "description": "길고양이 동료. 야생의 친구로 길들인다.",
+      "stackable": false
+    },
+    "찍찍이": {
+      "id": "찍찍이",
+      "type": "item",
+      "category": "companion",
+      "name": "찍찍이",
+      "description": "쥐 동료. 쥐바겐·정보 수집에 도움.",
+      "stackable": false
+    }
+  }
+}

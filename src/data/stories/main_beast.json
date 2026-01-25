@@ -1,0 +1,45 @@
+{
+  "id": "main_beast",
+  "name": "짐승소년",
+  "summary": "서울 외곽 숲. 돌연변이 주인공이 인간의 모습을 되찾기 위한 여정.",
+  "setting": {
+    "regions": ["서울 외곽 숲"],
+    "theme": "동물, 유전자, 큐티독 vs 청소부"
+  },
+  "branches": [
+    {
+      "id": "branch_cutedog_cleaner",
+      "name": "큐티독 vs 청소부",
+      "options": [
+        { "desc": "큐티독: 동물 보호 조직과 협력", "gadgets": ["야생의 친구"] },
+        { "desc": "청소부: 돌연변이 사냥 조직과 협력" }
+      ]
+    },
+    {
+      "id": "branch_lab_access",
+      "name": "유전자 연구소 접근",
+      "options": [
+        { "desc": "큐레이터를 통한 접근" },
+        { "desc": "소니를 통한 접근" },
+        { "desc": "쥐 바겐(찍찍이)을 통한 접근", "gadgets": ["찍찍이"] },
+        { "desc": "모로 박사를 통한 접근" },
+        { "desc": "청소부를 통한 접근" }
+      ]
+    },
+    {
+      "id": "branch_final",
+      "name": "최종: 연구소 선택",
+      "options": [
+        { "desc": "소니와 함께 연구소 파괴", "outcome": "동물 해방, 응징/짐승반란" },
+        { "desc": "박사와 협력", "outcome": "부모 구출, 가족" }
+      ]
+    }
+  ],
+  "endings": [
+    { "id": "ending_eungjing", "name": "결말: 응징", "desc": "연구소 파괴, 동물 해방" },
+    { "id": "ending_beast_revolt", "name": "결말: 짐승반란", "desc": "동물 반란 시작" },
+    { "id": "ending_family", "name": "결말: 가족", "desc": "부모 구출, 연구소 개편" }
+  ],
+  "related_encounters": ["encounter_011", "encounter_012"],
+  "related_gadgets": ["야생의 친구", "리트리버", "길고양이", "찍찍이", "각설탕", "개박하"]
+}

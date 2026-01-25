@@ -1,0 +1,46 @@
+{
+  "id": "main_dobong",
+  "name": "도봉산",
+  "summary": "도봉구·서대문구를 무대로, 가족을 살해한 범인을 찾는 복수 이야기.",
+  "setting": {
+    "regions": ["도봉구", "서대문구"],
+    "theme": "복수, 7경비단, 기술자 vs 군인"
+  },
+  "branches": [
+    {
+      "id": "branch_7gd_infiltrate",
+      "name": "7경비단 잠입",
+      "options": [
+        { "desc": "거짓말로 잠입", "gadgets": ["능숙한 거짓말"], "items": ["군복"] },
+        { "desc": "교섭으로 잠입", "gadgets": ["교섭"], "resources": ["돈"] },
+        { "desc": "자원 입대" }
+      ]
+    },
+    {
+      "id": "branch_seodaemun",
+      "name": "서대문 기마대 토벌",
+      "options": [
+        { "desc": "기계공학 + 웅변/철학으로 폭주족 설득", "gadgets": ["기계공학", "웅변"] },
+        { "desc": "조립식 저격소총 + 은신술로 저격", "gadgets": ["조립식 저격소총", "은신술", "사격술"] },
+        { "desc": "칠러 김 처치 + 각설탕 + 야생의 친구로 흑우 이용", "gadgets": ["야생의 친구"], "items": ["각설탕"] },
+        { "desc": "날렵함 + 근력 + 리트리버 + 권총 + 유도 강행 돌파", "gadgets": ["날렵함", "근력", "리트리버", "권총", "유도"] }
+      ]
+    },
+    {
+      "id": "branch_final",
+      "name": "최종 분기: 기술자 vs 군인",
+      "options": [
+        { "desc": "기술자 루트: 토르비욘 따라 기술자 진영", "outcome": "화합 가능" },
+        { "desc": "군인 루트: 신동현 중상중사 따라 군인 진영", "outcome": "초토화/신세계/진실/복수" }
+      ]
+    }
+  ],
+  "endings": [
+    { "id": "ending_hwahab", "name": "결말: 화합", "desc": "엽우회-기술자 연합 승리, 평화로운 공동체" },
+    { "id": "ending_choto", "name": "결말: 초토화", "desc": "7경비단 전멸, 주인공 홀로 생존" },
+    { "id": "ending_shinsegye", "name": "결말: 신세계", "desc": "주인공이 7경비단 사령관이 됨" },
+    { "id": "ending_jinsil", "name": "결말: 진실", "desc": "핵이 이미 발사되었음을 발견" },
+    { "id": "ending_boksu", "name": "결말: 복수", "desc": "안수근 대령을 직접 처단" }
+  ],
+  "related_encounters": ["encounter_007", "encounter_008", "encounter_017"]
+}
