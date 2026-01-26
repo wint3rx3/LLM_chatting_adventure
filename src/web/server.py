@@ -34,6 +34,11 @@ static_dir = Path(__file__).parent / "static"
 templates = Jinja2Templates(directory=str(templates_dir))
 app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
 
+# 데이터 이미지 폴더를 정적 파일로 마운트
+data_images_dir = project_root / "src" / "data" / "images"
+if data_images_dir.exists():
+    app.mount("/data/images", StaticFiles(directory=str(data_images_dir)), name="data-images")
+
 # 게임 세션 관리 (실제로는 Redis나 DB 사용 권장)
 game_sessions: Dict[str, Dict] = {}
 
