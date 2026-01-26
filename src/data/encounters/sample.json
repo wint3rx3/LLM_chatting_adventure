@@ -6,6 +6,7 @@
       "name": "강도 만남",
       "description": "어둡고 좁은 골목에서 강도를 만났습니다. 그는 칼을 들고 당신을 위협하고 있습니다.",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_001.jpg", "alt": "강도 만남" },
         { "type": "text", "content": "어둡고 좁은 골목 끝에서 누군가 다가온다." },
         { "type": "text", "content": "그는 칼을 들고 당신을 가리킨다. \"돈 내놔. 살고 싶으면.\"" }
       ],
@@ -70,6 +71,7 @@
       "name": "쓰레기 더미 발견",
       "description": "쓰레기 더미에서 뭔가 반짝이는 것을 발견했습니다.",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_002.jpg", "alt": "쓰레기 더미 발견" },
         { "type": "text", "content": "폐허 사이 쓰레기 더미가 눈에 들어온다." },
         { "type": "text", "content": "뭔가 금속이 반짝인다. 가까이 가면 형체가 보인다." }
       ],
@@ -102,9 +104,9 @@
       "name": "길 잃은 사람",
       "description": "길에서 헤매는 노인이 당신에게 길을 묻습니다. '저기, 혹시 지하철역이 어디인지 아세요?'",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_003.jpg", "alt": "길 잃은 노인" },
         { "type": "text", "content": "허름한 옷의 노인이 당신 앞을 막아선다." },
-        { "type": "text", "content": "\"저기, 혹시 지하철역이 어디인지 아세요?\" 두리번거리며 묻는다." },
-        { "type": "image", "url": "/static/img/placeholder.svg", "alt": "길 잃은 노인" }
+        { "type": "text", "content": "\"저기, 혹시 지하철역이 어디인지 아세요?\" 두리번거리며 묻는다." }
       ],
       "conditions": {},
       "weight": 1,
@@ -135,6 +137,7 @@
       "name": "노상 상인",
       "description": "노점에서 물건을 파는 상인이 있습니다. '한번 둘러보시죠. 오늘 딱 한 상자 남았어요.'",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_004.jpg", "alt": "노상 상인" },
         { "type": "text", "content": "폐허 한켠 노점에 상인이 넌지시 손짓한다." },
         { "type": "text", "content": "\"한번 둘러보시죠. 오늘 딱 한 상자 남았어요. 싸게 드릴게.\"" }
       ],
@@ -180,6 +183,7 @@
       "name": "위험한 골목",
       "description": "몇몇 불량배가 당신을 에워쌌습니다. '야, 좀 보자.' 빨리 결정해야 합니다.",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_005.jpg", "alt": "위험한 골목" },
         { "type": "text", "content": "좁은 골목 끝에서 불량배들이 당신을 막아선다." },
         { "type": "text", "content": "\"야, 좀 보자. 혼자 다니면 위험한데.\" 빨리 결단해야 한다." }
       ],
@@ -239,6 +243,7 @@
       "name": "암거래 상인",
       "description": "그늘에서 '귀한 물건 있는데...' 하고 속삭이는 자가 있습니다. 권총을 노리고 있는 눈치입니다.",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_006.jpg", "alt": "암거래 상인" },
         { "type": "text", "content": "그늘진 골목에서 누군가 \"귀한 물건 있는데…\" 하고 속삭인다." },
         { "type": "text", "content": "권총을 노리는 눈치다. 빨리 거래할지 말지 정해야 한다." }
       ],
@@ -284,6 +289,7 @@
       "name": "폐품업자 김씨",
       "description": "오늘도 힘겹게 잠자리를 마련하고 콘크리트 틈에서 잠을 청하려는 순간, 익숙한 목소리가 들려옵니다.",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_007.jpg", "alt": "폐품업자 김씨" },
         { "type": "text", "content": "콘크리트 틈에서 잠자리 마련하려던 순간, 익숙한 목소리가 들린다." },
         { "type": "text", "content": "\"폐허 서울에서의 삶은 좀 적응이 됐나?\" 폐품업자 김씨가 웃으며 선다." },
         { "type": "text", "content": "\"마을 사람들이 무척 걱정했단다. 무슨 일 생기면 즉시 데려오라고 하셨지.\"" }
@@ -339,6 +345,7 @@
       "name": "마님",
       "description": "혜화역 근처 마님은 전쟁 후 가장 큰 술집이다. 7경비단 소문도 들을 수 있다.",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_008.jpg", "alt": "마님" },
         { "type": "text", "content": "혜화역 근처 '마님'. 전쟁 후 가장 큰 술집이다. 사람들이 오가며 7경비단 얘기도 오간다." },
         { "type": "text", "content": "들어가려면 돈을 내거나, 몰래 들어가야 한다." }
       ],
@@ -392,6 +399,7 @@
       "name": "구두장이 사냥꾼과 쥐",
       "description": "넓은 골목에서 화려한 구두를 신은 사냥꾼들이 분주히 움직입니다.",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_009.jpg", "alt": "구두장이 사냥꾼과 쥐" },
         { "type": "text", "content": "넓은 골목에서 구두에 술이 주렁주렁 달린 사냥꾼들이 분주히 움직인다." },
         { "type": "text", "content": "\"커다란 쥐 못 봤어? 거의 다 잡았는데 이 근처에서 놓쳐버렸어.\" 한 여자가 당신에게 말한다." }
       ],
@@ -443,6 +451,7 @@
       "name": "판자학교",
       "description": "풀과 나무가 무성한 마당, 반쯤 무너진 건물. 아이들이 호기심 어린 눈으로 바라본다.",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_010.jpg", "alt": "판자학교" },
         { "type": "text", "content": "어떤 학교에 도착했다. 풀과 나무가 무성한 마당, 반쯤 무너진 건물." },
         { "type": "text", "content": "아이들이 당신을 보며 호기심 어린 눈으로 바라본다. 선생으로 보이는 사람이 \"선생이 누구냐\" 묻는다." }
       ],
@@ -515,6 +524,7 @@
       "name": "거대 고양이",
       "description": "도심 외곽 폐가. 사람 키만 한 털북숭이 짐승이 쓰레기 더미 사이로 움직이며 당신을 노린다.",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_011.jpg", "alt": "거대 고양이" },
         { "type": "text", "content": "도심 외곽 폐가. 쓰레기 더미 사이로 뭔가 커다란 것이 움직인다." },
         { "type": "text", "content": "사람 키만 한 털북숭이 짐승이 당신을 노려본다. \"거대 고양이다, 괴물이다!\" 주변에서 외친다." }
       ],
@@ -599,6 +609,7 @@
       "name": "청설모를 놓친 고엽사",
       "description": "사냥하던 청설모를 놓친 노련한 엽사가 주변을 뒤진다.",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_012.jpg", "alt": "청설모를 놓친 고엽사" },
         { "type": "text", "content": "\"제기랄!\" 노련한 엽사가 주변을 뒤진다." },
         { "type": "text", "content": "\"저 놈만 잡으면 오늘 저녁이 있는데.\" 청설모를 놓친 모양이다. 관찰력이나 리트리버가 있으면 도와줄 수 있을 것 같다." }
       ],
@@ -654,6 +665,7 @@
       "name": "정체 모를 실험실",
       "description": "낡은 건물 지하. 곰팡내와 약품 냄새, 삭은 쇠사슬과 핏자국. 의약품이 눈에 띈다.",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_013.jpg", "alt": "정체 모를 실험실" },
         { "type": "text", "content": "낡은 건물 지하. 퀴퀴한 곰팡내, 은은한 약품 냄새." },
         { "type": "text", "content": "삭은 쇠사슬이 매달린 수술대, 오래된 갈색 핏자국. 전약상자에서 쓸만한 의약품이 보인다." }
       ],
@@ -696,6 +708,7 @@
       "name": "까마귀 군주 교단",
       "description": "교보문고 인근 교단 입구. 갇힌 사람들이 구해달라 외친다.",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_014.jpg", "alt": "까마귀 군주 교단" },
         { "type": "text", "content": "교보문고 인근. 책을 치워가며 찾은 교단 입구." },
         { "type": "text", "content": "사람들이 쇠사슬에 묶여 있다. \"구해줘!\" 자물쇠를 따면 풀어줄 수 있을 것 같다." }
       ],
@@ -739,6 +752,7 @@
       "name": "괴상한 가판대",
       "description": "낡은 가판대 앞에 수상한 노인이 앉아 있다. 이상한 물건들이 진열되어 있다.",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_015.jpg", "alt": "괴상한 가판대" },
         { "type": "text", "content": "낡은 가판대. 수상한 노인이 웃으며 손짓한다." },
         { "type": "text", "content": "\"이것도 보고, 저것도 보라. 다 쓸모 있는 것들이야.\" 개박하, 살충제, 각설탕 같은 것들이 보인다." }
       ],
@@ -776,6 +790,7 @@
       "name": "보석문 까마귀",
       "description": "보석문 근처. 까마귀들이 날며 짖어댄다. MP3로 까마귀 울음소리를 틀면 피할 수 있다는 소문이 있다.",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_016.jpg", "alt": "보석문 까마귀" },
         { "type": "text", "content": "보석문 근처. 까마귀 떼가 날며 짖어댄다. 머리 위로 그림자가 스친다." },
         { "type": "text", "content": "MP3로 까마귀 울음소리를 틀면 무리에서 벗어날 수 있다는 얘기를 들은 적 있다." }
       ],
@@ -834,6 +849,7 @@
       "name": "갈방",
       "description": "어두운 동네 골목 '갈방'. 술 냄새와 대화 소리가 스민다. 7경비단·정보거래 얘기가 오간다.",
       "messages": [
+        { "type": "image", "url": "/data/images/encounters/encounter_017.jpg", "alt": "갈방" },
         { "type": "text", "content": "어두운 골목 끝 '갈방'. 술 냄새와 웅성거림이 난다." },
         { "type": "text", "content": "7경비단 얘기, 정보 거래, 뒷이야기가 오가는 소리가 들린다. 들어갈까." }
       ],
